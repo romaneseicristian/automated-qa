@@ -165,6 +165,7 @@ suite('Unit Tests', function () {
     after(function() {
       chai.request(server)
       .get('/')
+    });
   });
   // -----------------------------------------------------------------------------
 });
