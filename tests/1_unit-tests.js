@@ -162,12 +162,9 @@ suite('Unit Tests', function () {
       assert.fail(airlinePlane, Object);
       assert.fail(myCar.wheels, String);
     });
+    after(function() {
+      chai.request(server)
+      .get('/')
   });
-
   // -----------------------------------------------------------------------------
-  after(function() {
-    chai.request(server)
-    .get('/')
-  });
-
 });
