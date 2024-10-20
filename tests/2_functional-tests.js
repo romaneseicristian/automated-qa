@@ -41,8 +41,12 @@ suite('Functional Tests', function () {
         .put('/travellers')
         .send({"surname": "Colombo"})
         .end(function (err, res) {
-          assert.fail();
-
+          assert.equal(res.status, 200);
+          assert.equal(res.type, 'application/json', 'Response should be json');
+          assert.equal(
+            res.body.name,
+            'Cristoforo');
+          assert.equal(res.body.surname, 'Colombo');
           done();
         });
     });
